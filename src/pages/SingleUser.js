@@ -25,10 +25,10 @@ const SingleUser = () => {
   }, []);
   return (
     <div>
-      <h1>{user.name}</h1>
+      <h1>{user.username}</h1>
 
       <UserProfile
-        username={user.username}
+        name={user.name}
         email={user.email}
         phone={user.phone}
         website={user.website}
