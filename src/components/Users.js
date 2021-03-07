@@ -6,6 +6,7 @@ const Users = () => {
   const [users, setUsers] = useState([]);
   const [view, setView] = useState('gridview');
 
+
   const getUsers = async () => {
     const response = await fetch(URL);
     const data = await response.json();
