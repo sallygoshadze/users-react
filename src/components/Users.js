@@ -4,6 +4,7 @@ const Users = () => {
   const URL = 'https://jsonplaceholder.typicode.com/users';
 
   const [users, setUsers] = useState([]);
+  const [view, setView] = useState('gridview');
 
   const getUsers = async () => {
     const response = await fetch(URL);
@@ -11,19 +12,32 @@ const Users = () => {
     setUsers(data);
   };
 
+  const handleToggle = () => {
+    if (view === 'listview') {
+      setView('gridview');
+    } else if (view === 'gridview') {
+      setView('listview');
+    }
+  };
+
   useEffect(() => {
     getUsers();
   }, []);
   return (
     <div>
-      {users.map((user) => (
-        <User
-          key={user.id}
-          name={user.name}
-          username={user.username}
-          website={user.website}
-        />
-      ))}
+      <button className="toggle-btn" onClick={handleToggle}>
+        Switch View
+      </button>
+      <div className={`users-container ${view}`}>
+        {users.map((user) => (
+          <User
+            key={user.id}
+            name={user.name}
+            username={user.username}
+            website={user.website}
+          />
+        ))}
+      </div>
     </div>
   );
 };

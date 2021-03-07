@@ -4,7 +4,7 @@ import SearchBox from '../components/SearchBox';
 const home = () => {
   return (
     <div>
-      <h1>homepage</h1>
+      <h1 className="page-title">Explore Users</h1>
       <SearchBox />
       <Users />
     </div>

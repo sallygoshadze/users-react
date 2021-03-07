@@ -10,15 +10,16 @@ const SearchBox = () => {
 
   return (
     <div>
-      <form>
+      <form className="search-form">
         <input
           type="text"
+          className="search-box"
           ref={searchValue}
           onChange={searchUser}
           placeholder="type username ..."
         />
         <Link to={`/${searchTerm}`}>
-          <button>Search</button>
+          <button className="search-btn">Search</button>
         </Link>
       </form>
     </div>

@@ -7,14 +7,16 @@ import SingleUser from './pages/SingleUser';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Navbar />
-      <Switch>
-        <Route exact path="/" component={home}></Route>
-        <Route path="/about" component={about}></Route>
-        <Route path="/:username" component={SingleUser}></Route>
-      </Switch>
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={home}></Route>
+          <Route path="/about" component={about}></Route>
+          <Route path="/:username" component={SingleUser}></Route>
+        </Switch>
+      </BrowserRouter>
+    </>
   );
 }
 

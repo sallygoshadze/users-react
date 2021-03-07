@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import UserProfile from '../components/UserProfile';
 
 const SingleUser = () => {
@@ -24,8 +24,9 @@ const SingleUser = () => {
     getUser();
   }, []);
   return (
-    <div>
+    <div className="userpage-username">
       <h1>{user.username}</h1>
+      <Link to="/" className='back-btn'>Back Home</Link>
 
       <UserProfile
         name={user.name}
